@@ -64,8 +64,8 @@ function setup() {
     createCanvas(900, 750);
 
     let buttonSize = 50;
-    let buttonX = 10;
-    let buttonY = 10;
+    let buttonX = 20;
+    let buttonY = 20;
     
     let button = createButton("");
     button.position(buttonX, buttonY);
@@ -87,8 +87,8 @@ function setup() {
 
     let resetButtonSizeW = 100;
     let resetButtonSizeH = 32;
-    let resetButtonX = 765;
-    let resetButtonY = 20;
+    let resetButtonX = 755;
+    let resetButtonY = 25;
 
     resetButton = createButton("");
     resetButton.position(resetButtonX, resetButtonY);
@@ -224,7 +224,7 @@ function draw() {
     let instructions = "Drag the trash to the appropriate bin.";
     textSize(25);
     textAlign(CENTER, CENTER);
-    text(instructions, width/2, 25);
+    text(instructions, width/2, 35);
     fill("#433633");
 }
 
