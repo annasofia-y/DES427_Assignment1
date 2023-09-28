@@ -4,6 +4,7 @@ let myFont;
 
 let binAudio;
 let bgAudio;
+let yayAudio;
 let muteButton;
 
 let paperballImage;
@@ -35,6 +36,8 @@ let placedCoffeeBeansInBin = false;
 let placedPaperBallInBin = false;
 let placedRedCupInBin = false;
 
+let allItemsPlacedCorrectly = false;
+
 let resetButton;
 /* let resetButtonImg;
 let resetButtonHoverImg; */
@@ -50,6 +53,7 @@ function preload() {
 
     binAudio = loadSound("crumpleSound.mp3");
     bgAudio = loadSound("birdAmbience.wav");
+    yayAudio = loadSound("yay.wav");
     mutedImg = loadImage("muted.png");
     unmutedImg = loadImage("unmuted.png");
 
@@ -84,6 +88,7 @@ function setup() {
     bgAudio.loop();
     bgAudio.setVolume(0.3);
     binAudio.setVolume(0.15);
+    yayAudio.setVolume(0.15);
 
     let resetButtonSizeW = 100;
     let resetButtonSizeH = 32;
@@ -319,6 +324,17 @@ function mouseReleased() {
     } else {
         placedRedCupInBin = false;
     }
+
+    if (placedCoffeeBeansInBin && placedPaperBallInBin && placedRedCupInBin) {
+        allItemsPlacedCorrectly = true;
+    } else {
+        allItemsPlacedCorrectly = false;
+    }
+
+    if (allItemsPlacedCorrectly) {
+        yayAudio.play();
+    }
+
 }
 
 /* function changeResetButton() {
